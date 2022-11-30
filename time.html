@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="time.js">
+        function abc()
+        {
+            document.getElementById("demo").innerHTML="My Java script";
+        }
+
+    </script>
+</head>
+<body>
+<h3>Duplicate Array</h3>
+<p id="arr1"></p>
+<p id="arr2"></p>
+<script>
+    const array1=new Array(10,15,10,25,30,25,35,30,10);
+    const array2=new Array();
+    const count={};
+    array1.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+    // console.log(count);
+    for(i=0;i<array1.length-1;i++)
+    {
+        // console.log(array1.length);
+        for(j=i+1;j<array1.length;j++)
+        {
+            if(array1[i]==array1[j])
+            {
+                document.getElementById("arr1").innerHTML+=array1[i]+" = "+count[array1[i]]+"<br>";
+                document.getElementById("arr2").innerHTML+=array2.includes(array1[i]);
+                if(true)
+                {
+                    break;
+                }
+                else
+                {
+                    array2.push(array1[i]);
+                }
+            }
+        }
+    }
+    // document.getElementById("arr2").innerHTML+=array2.length;
+</script>
+<h3>Current Time</h3>
+<p id="ti"></p>
+<script>
+    
+    setInterval(displaytime,1000);
+    function displaytime(){
+        const date=new Date();
+        document.getElementById("ti").innerHTML=date.toLocaleTimeString();
+    }
+</script>
+
+<h1 id="demo">Java Script</h1>
+<button onclick="abc()">Try</button>
+<br>
+<script>
+    document.write("Write");
+    // window.alert("Alert");
+    // console.log("Console");
+</script>
+<br>
+<button onclick="window.print()">Print This Page</button>
+<br>
+<script>
+    let a,b,c;
+    a=10;
+    b=20;
+    c=a+b;
+    document.write(c);
+</script>
+<br>
+<p id="space"></p>
+<script>
+    document.getElementById("space").innerHTML="John"+" "+"Smith";
+</script>
+<br>
+<p id="variables"></p>
+<script>
+    const p1=10;
+    const p2=20;
+    let total=p1+p2;
+    document.getElementById("variables").innerHTML="Total Price :"+total;
+</script>
+<h4 id="obj">Data Types</h4>
+<script>
+    let lenghth=16;  //number
+    let person="Johnson"; //string
+    let object={firstname:"john", lastname:"son"};//object
+    document.getElementById("obj").innerHTML=object.firstname+" "+object.lastname;
+</script>
+<br>
+<p id="func"></p>
+<script>
+    function myfunc(p1,p2)
+    {
+        return p1*p2;
+    }
+    document.getElementById("func").innerHTML=myfunc(3,4);
+</script>
+<br>
+<h4>Date And Time</h4>
+<p id="dt"></p>
+<p id="dt1"></p>
+<p id="dt2"></p>
+<h4>Time</h4>
+<p id="dt3"></p>
+<p id="ln"></p>
+<p id="pad"></p>
+<p id="pad1"></p>
+<p id="para"></p>
+<script>
+    document.getElementById("dt").innerHTML=Date();
+    const date1=new Date();
+    document.getElementById("dt1").innerHTML=date1.toUTCString();
+    const date2=new Date();
+    document.getElementById("dt2").innerHTML=date2.toDateString();
+    const date3=new Date();
+    document.getElementById("dt3").innerHTML=date3.getHours()+" "+date3.getMinutes()+" "+date3.getSeconds();
+    text="ABCDDFGHJ";
+    document.getElementById("ln").innerHTML=text.length;
+    text1="5";
+    text2="4";
+    document.getElementById("pad").innerHTML=text1.padStart(4,"x");
+    document.getElementById("pad1").innerHTML=text2.padEnd(5,"x");
+    let str = "Please locate where 'locate' occurs!";
+    document.getElementById("para").innerHTML=str.indexOf("where");
+</script>
+<br>
+<p id="para1"></p>
+<script>
+let str1 = "Please locate where 'locate' occurs!";
+document.getElementById("para1").innerHTML=str1.lastIndexOf("locate");
+</script>
+<h3>Class</h3>
+<p id="mt"></p>
+<script>
+    class Cars
+    {
+        constructor(name,year)
+        {
+            this.name=name;
+            this.year=year;
+        }
+        age()
+        {
+            let date=new Date();
+            return date.getFullYear()-this.year;
+        }
+    }
+    let mycar=new Cars("Ford",2014);
+    document.getElementById("mt").innerHTML="My Car is "+mycar.age()+" Years Old.";
+</script>
+<h3>Arrow Function</h3>
+<button id="cl">Click</button>
+<p id="arrow"></p>
+<script>
+    var hello;
+    hello=function()
+    {
+        document.getElementById("arrow").innerHTML+=this;
+    }
+    window.addEventListener("load",hello);
+    document.getElementById("cl").addEventListener("click",hello);
+</script>
+<h2>Time<span id="time_span"></span></h2>
+</header>
+<script type="text/javascript">
+var currentTime = new Date()
+var hours = currentTime.getHours()
+var minutes = currentTime.getMinutes()
+if (minutes < 10){
+    minutes = "0" + minutes
+}
+var t_str = hours + ":" + minutes + " ";
+if(hours > 11){
+    t_str += "PM";
+} else {
+   t_str += "AM";
+}
+document.getElementById('time_span').innerHTML = t_str;
+</script>
+
+
+</body>
+</html>
+<script>
+    div=document.getElementById('display_data');
+    let table = document.createElement('table');
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+    table.appendChild(thead);
+    table.appendChild(tbody);
+    div.appendChild(table);
+    let row_1 = document.createElement('tr');
+    let heading_1 = document.createElement('th');
+    heading_1.innerHTML = "Sr. No.";
+    let heading_2 = document.createElement('th');
+    heading_2.innerHTML = "Date";
+    let heading_3 = document.createElement('th');
+    heading_3.innerHTML = "Title";
+    let heading_4 = document.createElement('th');
+    heading_4.innerHTML = "Notes";
+    row_1.appendChild(heading_1);
+    row_1.appendChild(heading_2);
+    row_1.appendChild(heading_3);
+    row_1.appendChild(heading_4);
+    thead.appendChild(row_1);
+</script>
